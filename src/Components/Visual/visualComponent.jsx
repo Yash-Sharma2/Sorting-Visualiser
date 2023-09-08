@@ -76,7 +76,7 @@ function VisualComponent() {
 				<label className='sliderLabel'>
 					Array Size
 					<br />
-					<input id='rangeSlider' type='range' min='10' max='150' value={arrSize} onChange={(e) => setArrSizeHelper(e.target.value)} />
+					<input id='rangeSlider' type='range' min='10' max='100' value={arrSize} onChange={(e) => setArrSizeHelper(e.target.value)} />
 				</label>
 				<br />
 				<label className='sliderLabel'>
