@@ -1,10 +1,12 @@
+import React, { useState, useEffect } from 'react';
 export var delay = 200
-export const PRIMARY_COLOR = 'rgb(70, 165, 255)';
-export const FINAL_COLOR = 'rgb(15, 245, 70)';
-export const POSITION_FINAL_COLOR = 'rgb(183, 51, 245)';
-export const COMPARE_COLOR = 'blue';
-export const SWAP_COLOR = 'red';
-export const MIN_COLOR = 'rgb(255, 112, 31)'
+export const PRIMARY_COLOR = 'rgb(0, 153, 255)';
+export const FINAL_COLOR = 'rgb(0, 255, 102)';
+export const POSITION_FINAL_COLOR = 'rgb(204, 0, 255)';
+export const COMPARE_COLOR = 'rgb(0, 0, 255)';
+export const SWAP_COLOR = 'rgb(255, 0, 0)';
+export const MIN_COLOR = 'rgb(255, 102, 0)';
+
 
 export function MakeDelay(milisec) {
 	return new Promise(resolve => {
@@ -20,10 +22,10 @@ export function changeDelay(val) {
 	delay = val;
 }
 
-export function Swap(x, y) {
-	const temp = x.style.height;
-	x.style.height = y.style.height;
-	y.style.height = x = temp;
+export function Swap(a, b) {
+	const temp = a.style.height;
+	a.style.height = b.style.height;
+	b.style.height = a = temp;
 }
 
 export function disableAllButtons(val) {

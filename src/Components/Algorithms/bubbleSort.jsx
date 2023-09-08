@@ -23,6 +23,7 @@ export async function bubbleSort() {
 			await MakeDelay(delay);
 			arr[j].style.background = PRIMARY_COLOR;
 			arr[j + 1].style.background = PRIMARY_COLOR;
+         
 		}
 		await MakeDelay(delay);
 		arr[n - 1 - i].style.background = POSITION_FINAL_COLOR;

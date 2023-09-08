@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { bubbleSort } from '../Algorithms/bubbleSort';
 import { changeDelay, delay, PRIMARY_COLOR, randomNumberFrom } from '../Utilites/utils';
+import './visualComponent.css'
+import icon from '../Assets/github-icon.png'
 
 function VisualComponent() {
     var [arr, setArr] = useState([]);
 	var [arrSize, setArrSize] = useState(30);
 	var [wid, setWid] = useState(33);
+    var [delayinit, changeDelayinit] = useState(200);
+
+    const changeDelayinitHelper = (val) => {
+        changeDelay(505 - val);
+        changeDelayinit(val);
+    };
 
     function resetArr() {
 		var arr = []
@@ -25,7 +33,6 @@ function VisualComponent() {
 	}, [])
 
     function setArrSizeHelper(val) {
-		console.log(val);
 		if (val > 100) {
 			setWid(2)
 		}
@@ -63,7 +70,7 @@ function VisualComponent() {
 
 
 	return (
-		<div>
+		<div className=' h-[100vh] w-[100vw] flex'>
 			<div className='sideNavbar'>
 				<h3>Sorting Visualiser</h3>
 				<label className='sliderLabel'>
@@ -73,17 +80,17 @@ function VisualComponent() {
 				</label>
 				<br />
 				<label className='sliderLabel'>
-					Delay
+					Speed
 					<br />
-					<input type='range' min='5' max='200' onChange={(e) => { changeDelay(e.target.value) }} />
+					<input type='range' min='100' max='500' value = {delayinit} onChange={(e) => { changeDelayinitHelper(e.target.value) }} />
 				</label> 
 				<br />
 				<div><button className='btn' onClick={resetArr}>Generate array</button></div>
 				<div><button className='btn' id='bsort' onClick={bubbleSort}>Bubble Sort</button></div>
-				<div>
+				<div className='mx-auto'>
 					<br />
 					<a href="https://github.com/Yash-Sharma2" target='_blank' rel='noreferrer' >
-						<img style={{ width: '90px' }} src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt='myGithub' />
+						<img style={{ width: '90px' }} src={icon} alt='myGithub' />
 					</a>
 				</div>
 			</div>
@@ -97,6 +104,8 @@ function VisualComponent() {
 							height: `${val}px`,
 							width: `${wid}px`,
 							backgroundColor: PRIMARY_COLOR,
+
+							transition: `height ${delay}ms`
 						}} >
 					</div>
 				))}
