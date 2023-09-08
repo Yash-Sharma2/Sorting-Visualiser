@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Sorting-Visualiser/static/css/main.9d708fb9.css",
+    "main.js": "/Sorting-Visualiser/static/js/main.fa191796.js",
+    "static/media/github-icon.png": "/Sorting-Visualiser/static/media/github-icon.b59201ef2ff446316717.png",
+    "index.html": "/Sorting-Visualiser/index.html",
+    "main.9d708fb9.css.map": "/Sorting-Visualiser/static/css/main.9d708fb9.css.map",
+    "main.fa191796.js.map": "/Sorting-Visualiser/static/js/main.fa191796.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d708fb9.css",
+    "static/js/main.fa191796.js"
+  ]
+}
