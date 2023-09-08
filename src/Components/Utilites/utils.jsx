@@ -7,6 +7,29 @@ export const COMPARE_COLOR = 'rgb(0, 0, 255)';
 export const SWAP_COLOR = 'rgb(255, 0, 0)';
 export const MIN_COLOR = 'rgb(255, 102, 0)';
 
+let audioCtx = null;
+
+export function playNote(freq) {
+  if (audioCtx === null) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  const dur = 0.1;
+  const osc = audioCtx.createOscillator();
+  osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+  osc.type = 'sine'; // You can change the waveform here
+
+  osc.start();
+  osc.stop(audioCtx.currentTime + dur);
+
+  const node = audioCtx.createGain();
+  node.gain.setValueAtTime(0.1, audioCtx.currentTime);
+
+  node.gain.linearRampToValueAtTime(0, audioCtx.currentTime + dur);
+
+  osc.connect(node);
+  node.connect(audioCtx.destination);
+}
 
 export function MakeDelay(milisec) {
 	return new Promise(resolve => {

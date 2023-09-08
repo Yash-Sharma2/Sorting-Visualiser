@@ -1,4 +1,4 @@
-import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons } from "../Utilites/utils";
+import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons, playNote } from "../Utilites/utils";
 
 
 export async function bubbleSort() {
@@ -23,7 +23,7 @@ export async function bubbleSort() {
 			await MakeDelay(delay);
 			arr[j].style.background = PRIMARY_COLOR;
 			arr[j + 1].style.background = PRIMARY_COLOR;
-         
+            playNote(400);
 		}
 		await MakeDelay(delay);
 		arr[n - 1 - i].style.background = POSITION_FINAL_COLOR;
