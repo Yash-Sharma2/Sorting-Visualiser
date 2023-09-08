@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 export var delay = 200
 export const PRIMARY_COLOR = 'rgb(0, 153, 255)';
 export const FINAL_COLOR = 'rgb(0, 255, 102)';
