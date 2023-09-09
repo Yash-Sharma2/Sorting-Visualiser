@@ -1,4 +1,4 @@
-import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons, playNote } from "../Utilites/utils";
+import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons, playNote } from "../Utilities/utils";
 
 
 export async function bubbleSort() {
@@ -23,14 +23,15 @@ export async function bubbleSort() {
 			await MakeDelay(delay);
 			arr[j].style.background = PRIMARY_COLOR;
 			arr[j + 1].style.background = PRIMARY_COLOR;
-            playNote(400);
+            playNote(200+(arr[j].clientHeight));
 		}
 		await MakeDelay(delay);
 		arr[n - 1 - i].style.background = POSITION_FINAL_COLOR;
 	}
 
 	for (i = 0; i < n; i++) {
-		await MakeDelay(delay)
+		await MakeDelay(delay);
+		playNote(200+(arr[i].clientHeight));
 		arr[i].style.background = FINAL_COLOR;
 	}
 	document.getElementById("bsort").className = 'btn';

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { bubbleSort } from '../Algorithms/bubbleSort';
-import { changeDelay, delay, PRIMARY_COLOR, randomNumberFrom } from '../Utilites/utils';
+import { selectionSort } from '../Algorithms/selectionSort';
+import { insertionSort } from '../Algorithms/insertionSort';
+import { quickSort } from '../Algorithms/quickSort';
+import { mergeSort } from '../Algorithms/mergeSort';
+import { changeDelay, delay, PRIMARY_COLOR, randomNumberFrom } from '../Utilities/utils';
 import './visualComponent.css'
 import icon from '../Assets/github-icon.png'
 
 function VisualComponent() {
+
     var [arr, setArr] = useState([]);
 	var [arrSize, setArrSize] = useState(30);
 	var [wid, setWid] = useState(33);
@@ -86,7 +91,11 @@ function VisualComponent() {
 				</label> 
 				<br />
 				<div><button className='btn' onClick={resetArr}>Generate array</button></div>
+				<div><button className='btn' id='msort' onClick={mergeSort}>mergeSort Sort</button></div>
+				<div><button className='btn' id='qsort' onClick={quickSort}>Quick Sort</button></div>
 				<div><button className='btn' id='bsort' onClick={bubbleSort}>Bubble Sort</button></div>
+				<div><button className='btn' id='ssort' onClick={selectionSort}>Selection Sort</button></div>
+				<div><button className='btn' id='isort' onClick={insertionSort}>Insertion Sort</button></div>
 				<div className='mx-auto'>
 					<br />
 					<a href="https://github.com/Yash-Sharma2" target='_blank' rel='noreferrer' >
