@@ -5,7 +5,7 @@ import { insertionSort } from '../Algorithms/insertionSort';
 import { quickSort } from '../Algorithms/quickSort';
 import { mergeSort } from '../Algorithms/mergeSort';
 import { heapSort } from '../Algorithms/heapSort';
-import { changeDelay, delay, PRIMARY_COLOR, sound, toggleSound } from '../Utilities/utils';
+import { changeDelay, delay, PRIMARY_COLOR, sound, toggleSound, playNote } from '../Utilities/utils';
 import './visualComponent.css'
 import icon from '../Assets/github-icon.png'
 
@@ -42,6 +42,7 @@ function VisualComponent() {
 	}
 
 	useEffect(() => {
+		playNote(0);
 		resetArr();
 	}, [])
 

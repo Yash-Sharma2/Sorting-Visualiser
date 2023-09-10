@@ -19,6 +19,7 @@ async function heapify(arr, n, i) {
         arr[r].style.background = COMPARE_COLOR;
         largest = r;
     }
+    playNote(200 + (arr[largest].clientHeight));
     await MakeDelay(delay);
 
     if (r < n) arr[r].style.background = PRIMARY_COLOR;
@@ -28,6 +29,7 @@ async function heapify(arr, n, i) {
     if (largest != i) {
         arr[largest].style.background = SWAP_COLOR;
         arr[i].style.background = SWAP_COLOR;
+        playNote(500);
         Swap(arr[i], arr[largest]);
         await MakeDelay(delay);
         arr[i].style.background = PRIMARY_COLOR;
@@ -37,6 +39,7 @@ async function heapify(arr, n, i) {
     }
     else {
         arr[largest].style.background = SWAP_COLOR;
+        playNote(500);
         await MakeDelay(delay);
         arr[largest].style.background = PRIMARY_COLOR;
     }
@@ -55,14 +58,17 @@ export async function heapSort() {
     for (var i = n - 1; i > 0; i--) {
         arr[0].style.background = SWAP_COLOR;
         arr[i].style.background = SWAP_COLOR;
+        playNote(500);
         Swap(arr[i], arr[0]);
         await MakeDelay(delay);
         arr[i].style.background = POSITION_FINAL_COLOR;
+        playNote(200 + (arr[i].clientHeight));
         await heapify(arr, i, 0);
     }
 
     for (var i = 0; i < n; i++) {
         arr[i].style.background = FINAL_COLOR;
+        playNote(200 + (arr[i].clientHeight));
         await MakeDelay(delay);
     }
 

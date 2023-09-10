@@ -1,4 +1,4 @@
-import { COMPARE_COLOR, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay } from "../Utilities/utils";
+import { COMPARE_COLOR, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay, playNote } from "../Utilities/utils";
 
 export async function selectionSort() {
 	disableAllButtons(true);
@@ -8,20 +8,25 @@ export async function selectionSort() {
 
 	for (var i = 0; i < n; i++) {
 		var min = i;
+		arr[min].style.background = MIN_COLOR;
+		playNote(500);
+		await MakeDelay(delay);
 
 		for (var j = i + 1; j < n; j++) {
-			arr[min].style.background = MIN_COLOR;
-
 			arr[j].style.background = COMPARE_COLOR;
+			playNote(200 + (arr[j].clientHeight));
+			await MakeDelay(delay);
 
 			if (parseInt(arr[j].style.height) < parseInt(arr[min].style.height)) {
 				arr[min].style.background = PRIMARY_COLOR;
-				await MakeDelay(delay)
 				min = j;
+				arr[min].style.background = MIN_COLOR;
+				playNote(500);
+				await MakeDelay(delay);
 			}
 			else {
-				await MakeDelay(delay)
 				arr[j].style.background = PRIMARY_COLOR;
+				await MakeDelay(delay);
 			}
 
 		}
@@ -30,21 +35,21 @@ export async function selectionSort() {
 
 			arr[i].style.background = SWAP_COLOR;
 			arr[min].style.background = SWAP_COLOR;
-
+			playNote(500);
+			Swap(arr[min], arr[i]);
 			await MakeDelay(delay);
 			arr[min].style.background = PRIMARY_COLOR;
 			arr[i].style.background = PRIMARY_COLOR;
-
-			Swap(arr[min], arr[i]);
 		}
 
-		await MakeDelay(delay)
 		arr[i].style.background = POSITION_FINAL_COLOR
+		await MakeDelay(delay)
 	}
 
 	for (i = 0; i < n; i++) {
-		await MakeDelay(delay)
 		arr[i].style.background = FINAL_COLOR;
+		playNote(200 + (arr[i].clientHeight));
+		await MakeDelay(delay)
 	}
 	document.getElementById("ssort").className = 'btn';
 	disableAllButtons(false);

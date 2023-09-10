@@ -13,30 +13,33 @@ export async function insertionSort() {
 
 			arr[j].style.background = COMPARE_COLOR;
 			arr[j - 1].style.background = COMPARE_COLOR;
-
+			playNote(200 + (arr[j - 1].clientHeight));
 			await MakeDelay(delay);
+
 
 			if (parseInt(arr[j].style.height) < parseInt(arr[j - 1].style.height)) {
 				arr[j].style.background = SWAP_COLOR;
 				arr[j - 1].style.background = SWAP_COLOR;
-				await MakeDelay(delay);
+				playNote(200);
 				Swap(arr[j - 1], arr[j]);
+				await MakeDelay(delay);
 			}
 			else {
-				await MakeDelay(delay);
 				arr[j].style.background = POSITION_FINAL_COLOR;
 				arr[j - 1].style.background = POSITION_FINAL_COLOR;
+				await MakeDelay(delay);
 				break;
 			}
 
-			await MakeDelay(delay);
 			arr[j].style.background = POSITION_FINAL_COLOR;
 			arr[j - 1].style.background = POSITION_FINAL_COLOR;
+			await MakeDelay(delay);
 		}
 	}
 	for (i = 0; i < n; i++) {
-		await MakeDelay(delay)
 		arr[i].style.background = FINAL_COLOR;
+		playNote(200 + (arr[i].clientHeight));
+		await MakeDelay(delay);
 	}
 	document.getElementById("isort").className = 'btn';
 	disableAllButtons(false);
