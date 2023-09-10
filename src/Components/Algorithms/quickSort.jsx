@@ -1,8 +1,6 @@
-import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, randomNumberFrom, MIN_COLOR, disableAllButtons, delay } from "../Utilities/utils";
+import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay } from "../Utilities/utils";
 
 async function partition(ele, s, e) {
-	var n = randomNumberFrom(s, e);
-	Swap(ele[n], ele[e]);
 
 	await MakeDelay(delay);
 	ele[e].style.background = MIN_COLOR;   // current pivot color 
@@ -56,7 +54,7 @@ async function quickSortHelper(ele, s, e) {
 }
 export async function quickSort() {
 	disableAllButtons(true);
-	document.getElementById("qsort").className = 'btndisabled';
+	document.getElementById("qsort").classList.add('btndisabled');
 
 	var arr = document.querySelectorAll('.element-bar');
 	var n = arr.length;

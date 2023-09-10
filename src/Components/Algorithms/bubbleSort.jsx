@@ -4,7 +4,7 @@ import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COM
 export async function bubbleSort() {
 	disableAllButtons(true);
 	var arr = document.querySelectorAll('.element-bar');
-	document.getElementById("bsort").className = 'btndisabled';
+	document.getElementById("bsort").classList.add('btndisabled');
 	var n = arr.length
 
 	for (var i = 0; i < n; i++) {
@@ -23,7 +23,7 @@ export async function bubbleSort() {
 			await MakeDelay(delay);
 			arr[j].style.background = PRIMARY_COLOR;
 			arr[j + 1].style.background = PRIMARY_COLOR;
-            playNote(200+(arr[j].clientHeight));
+			playNote(200 + (arr[j].clientHeight));
 		}
 		await MakeDelay(delay);
 		arr[n - 1 - i].style.background = POSITION_FINAL_COLOR;
@@ -31,7 +31,7 @@ export async function bubbleSort() {
 
 	for (i = 0; i < n; i++) {
 		await MakeDelay(delay);
-		playNote(200+(arr[i].clientHeight));
+		playNote(200 + (arr[i].clientHeight));
 		arr[i].style.background = FINAL_COLOR;
 	}
 	document.getElementById("bsort").className = 'btn';

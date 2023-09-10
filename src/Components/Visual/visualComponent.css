@@ -1,93 +1,59 @@
 body {
-  background-color: black;
+  @apply bg-black;
 }
+
+.wrapper {
+  margin-left: 0;
+  @apply h-full min-h-screen flex justify-between;
+}
+
 .array {
-  position: fixed;
-  text-align: center;
-  left: 250px;
-  top: auto;
-  bottom: 50px;
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: nowrap;
-  width: 1260px;
+  width: calc(100vw - 230px);
+  @apply fixed left-[230px] h-screen  pb-8 pl-10 gap-1 pt-0 pr-5 flex flex-nowrap justify-center items-end mx-auto;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
 
 .element-bar {
-  display: inline-block;
-  margin: 0 auto;
+  @apply mx-auto;
 }
 
 .sideNavbar {
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 210px;
-  z-index: 1;
-
-  background-color: rgb(29, 29, 29);
-  overflow-x: hidden;
-  padding-top: 20px;
-  box-shadow: 0 4px 8px 0 rgba(81, 81, 81, 0.7),
-    0 6px 20px 0 rgb(81, 81, 81, 0.7);
+  @apply flex flex-col items-center h-full min-h-screen w-[230px] min-w-[230px] font-bold z-10 bg-gray-900 rounded-md;
+  box-shadow: rgba(192, 191, 191, 0.35) 0px 5px 30px;
 }
 
 .sideNavbar h3 {
-  font-size: 23px;
-  text-decoration: underline;
-  color: #818181;
-  display: block;
-  transition: 0.4s;
-}
-
-.sideNavbar h3:hover {
-  color: #f1f1f1;
+  @apply text-2xl underline text-white hover:text-blue-300 transition duration-300 pt-10;
 }
 
 .sliderLabel {
-  color: #f1f1f1;
+  @apply text-gray-100 hover:text-blue-500 duration-300;
 }
 
 .btn {
-  margin: 10px 0;
-  display: inline-block;
-  padding: 6px;
-  width: 100px;
-  color: #818181;
-  font-weight: 400;
-  border: 2px solid #818181;
-  background-color: transparent;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 100px;
-  transition: 0.4s;
+  @apply text-sm w-[100px] p-[6px] text-gray-400 font-medium bg-transparent uppercase cursor-pointer rounded-full border-gray-400 border-2 duration-300;
 }
 
 .btn:hover {
-  color: #f1f1f1;
-  border: 2px solid #f1f1f1;
-  box-shadow: 0 12px 16px 0 rgba(81, 81, 81, 0.7),
-    0 17px 50px 0 rgba(81, 81, 81, 0.7);
-  text-shadow: 0 12px 16px 0 rgba(81, 81, 81, 0.7),
-    0 17px 50px 0 rgba(81, 81, 81, 0.7);
+  @apply text-gray-100 border-gray-100;
+  filter: drop-shadow(0 0 15px rgba(81, 81, 81, 0.7));
+}
+
+.logo {
+  @apply cursor-pointer opacity-95 hover:scale-110 hover:opacity-100 transition duration-300;
+  filter: drop-shadow(0 0 15px rgba(81, 81, 81, 0.7));
 }
 
 .btndisabled {
-  margin: 10px 0;
-  display: inline-block;
-  padding: 6px;
-  width: 100px;
-  border-radius: 100px;
-  font-weight: 400;
-  background-color: transparent;
-  cursor: not-allowed;
-  text-transform: uppercase;
-  color: #f1f1f1;
-  border: 2px solid #f1f1f1;
-  box-shadow: 0 12px 16px 0 rgba(81, 81, 81, 0.7),
-    0 17px 50px 0 rgba(81, 81, 81, 0.7);
-  text-shadow: 0 12px 16px 0 rgba(81, 81, 81, 0.7),
-    0 17px 50px 0 rgba(81, 81, 81, 0.7);
+  @apply text-gray-100 border-gray-100;
+  filter: drop-shadow(0 0 30px rgba(81, 81, 81, 0.7));
+  box-shadow: rgba(192, 191, 191, 0.35) 0px 5px 30px;
+}
+
+.btn-group {
+  @apply flex flex-col justify-between gap-2 pb-3;
 }

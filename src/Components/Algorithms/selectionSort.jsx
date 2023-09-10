@@ -3,7 +3,7 @@ import { COMPARE_COLOR, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_CO
 export async function selectionSort() {
 	disableAllButtons(true);
 	var arr = document.querySelectorAll('.element-bar');
-	document.getElementById("ssort").className = 'btndisabled';
+	document.getElementById("ssort").classList.add('btndisabled');
 	var n = arr.length
 
 	for (var i = 0; i < n; i++) {
