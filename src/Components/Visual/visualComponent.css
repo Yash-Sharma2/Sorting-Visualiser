@@ -9,7 +9,7 @@ body {
 
 .array {
   width: calc(100vw - 230px);
-  @apply fixed left-[230px] h-screen  pb-8 pl-10 gap-1 pt-0 pr-5 flex flex-nowrap justify-center items-end mx-auto;
+  @apply fixed left-[230px] h-screen gap-1 p-5 pb-8 flex flex-nowrap justify-center items-end mx-auto;
 }
 
 button:disabled {
@@ -27,15 +27,24 @@ button:disabled {
 }
 
 .sideNavbar h3 {
-  @apply text-2xl underline text-white hover:text-blue-300 transition duration-300 pt-10;
+  @apply text-2xl underline text-white hover:text-blue-300 transition duration-300 pt-5;
 }
 
 .sliderLabel {
-  @apply text-gray-100 hover:text-blue-500 duration-300;
+  @apply text-center text-gray-100 hover:text-blue-500 duration-300;
 }
 
 .btn {
   @apply text-sm w-[100px] p-[6px] text-gray-400 font-medium bg-transparent uppercase cursor-pointer rounded-full border-gray-400 border-2 duration-300;
+}
+
+.btn-sound {
+  @apply text-sm w-[100px] p-[6px] text-gray-400 font-medium bg-transparent uppercase cursor-pointer rounded-full border-gray-400 border-2 duration-300;
+}
+
+.btn-sound:hover {
+  @apply text-gray-100 border-gray-100;
+  filter: drop-shadow(0 0 15px rgba(81, 81, 81, 0.7));
 }
 
 .btn:hover {

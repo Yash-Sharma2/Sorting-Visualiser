@@ -1,8 +1,5 @@
 export var delay = 200
 export var sound = true;
-
-var unmuteIcon = <FontAwesomeIcon icon="fal fa-volume-mute" style={{ color: "#9ca3af", }} />
-var muteIcon = <FontAwesomeIcon icon="fa-light fa-volume-high" style={{ color: "#9ca3af", }} />
 export const PRIMARY_COLOR = 'rgb(0, 153, 255)';
 export const FINAL_COLOR = 'rgb(0, 255, 102)';
 export const POSITION_FINAL_COLOR = 'rgb(204, 0, 255)';
