@@ -9,7 +9,7 @@ body {
 
 .array {
   width: calc(100vw - 230px);
-  @apply fixed left-[230px] h-screen gap-1 p-5 pb-8 flex flex-nowrap justify-center items-end mx-auto;
+  @apply fixed left-[230px] h-screen gap-1 p-6 pb-8 flex flex-nowrap justify-center items-end mx-auto;
 }
 
 button:disabled {
