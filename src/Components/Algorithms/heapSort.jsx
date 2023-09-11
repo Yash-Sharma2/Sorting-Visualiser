@@ -42,6 +42,8 @@ async function heapify(arr, n, i) {
 }
 
 export async function heapSort() {
+    playNote(0);
+    MakeDelay(200);
     disableAllButtons(true);
     var arr = document.querySelectorAll('.element-bar');
     document.getElementById("hsort").classList.add('btndisabled');
