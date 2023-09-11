@@ -63,6 +63,8 @@ async function mergeSortHelper(arr, s, e) {
 }
 
 export async function mergeSort() {
+	playNote(0);
+	MakeDelay(200);
 	disableAllButtons(true);
 	document.getElementById("msort").classList.add('btndisabled');
 
