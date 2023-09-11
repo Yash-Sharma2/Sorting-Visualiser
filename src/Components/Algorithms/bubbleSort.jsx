@@ -2,6 +2,8 @@ import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COM
 
 
 export async function bubbleSort() {
+	playNote(0);
+	MakeDelay(200);
 	disableAllButtons(true);
 	var arr = document.querySelectorAll('.element-bar');
 	document.getElementById("bsort").classList.add('btndisabled');
