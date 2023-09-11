@@ -1,6 +1,15 @@
 import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay, playNote } from "../Utilities/utils";
 
 async function partition(ele, s, e) {
+	var n = randomNumberFrom(s, e);
+	ele[n].style.background = SWAP_COLOR;
+	ele[e].style.background = SWAP_COLOR;
+	playNote(500);
+	Swap(ele[e], ele[n]);
+	await MakeDelay(delay);
+	ele[n].style.background = PRIMARY_COLOR;
+	ele[e].style.background = PRIMARY_COLOR;
+
 
 	ele[e].style.background = MIN_COLOR;   // current pivot color 
 	playNote(200 + (ele[e].clientHeight));
