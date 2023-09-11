@@ -89,7 +89,7 @@ function VisualComponent() {
 			<div>
 				<div className='wrapper relative'>
 					<div className='sideNavbar'>
-						<div className='logo w-[50px]'>
+						<div className='logo w-[45px]'>
 							<br />
 							<a href="https://github.com/Yash-Sharma2" target='_blank' rel='noreferrer' >
 								<img src={icon} alt='myGithub' />
@@ -100,7 +100,7 @@ function VisualComponent() {
 							<label className='sliderLabel'>
 								Array Size
 								<br />
-								<input id='rangeSlider' type='range' min='5' max='120' step={1} value={arrSize} onChange={(e) => setArrSizeHelper(e.target.value)} />
+								<input id='rangeSlider' type='range' min='5' max='150' value={arrSize} onChange={(e) => setArrSizeHelper(e.target.value)} />
 							</label>
 							<br />
 							<label className='sliderLabel'>
