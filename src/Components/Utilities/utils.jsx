@@ -47,6 +47,10 @@ export function changeDelay(val) {
   delay = val;
 }
 
+export function randomNumberFrom(l, r) {
+  return Math.floor(Math.random() * (l - r + 1) + r)
+}
+
 export function Swap(a, b) {
   const temp = a.style.height;
   a.style.height = b.style.height;
