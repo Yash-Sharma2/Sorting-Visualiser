@@ -1,4 +1,4 @@
-import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay, playNote } from "../Utilities/utils";
+import { FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay, playNote, randomNumberFrom } from "../Utilities/utils";
 
 async function partition(ele, s, e) {
 	var n = randomNumberFrom(s, e);
