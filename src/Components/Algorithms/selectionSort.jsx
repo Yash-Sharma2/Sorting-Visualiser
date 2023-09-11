@@ -1,6 +1,8 @@
 import { COMPARE_COLOR, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, SWAP_COLOR, Swap, MIN_COLOR, disableAllButtons, delay, playNote } from "../Utilities/utils";
 
 export async function selectionSort() {
+	playNote(0);
+	MakeDelay(200);
 	disableAllButtons(true);
 	var arr = document.querySelectorAll('.element-bar');
 	document.getElementById("ssort").classList.add('btndisabled');
