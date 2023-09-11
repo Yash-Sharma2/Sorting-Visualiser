@@ -130,7 +130,7 @@ function VisualComponent() {
 									height: `${Math.floor(val * 95)}%`,
 									width: `${wid}px`,
 									backgroundColor: PRIMARY_COLOR,
-									transition: `height ${delay}ms`
+									transition: `${delay}ms`
 								}} >
 							</div>
 						))}
