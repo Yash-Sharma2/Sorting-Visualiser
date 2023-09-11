@@ -77,6 +77,8 @@ async function quickSortHelper(ele, s, e) {
 	return;
 }
 export async function quickSort() {
+	playNote(0);
+	MakeDelay(200);
 	disableAllButtons(true);
 	document.getElementById("qsort").classList.add('btndisabled');
 
