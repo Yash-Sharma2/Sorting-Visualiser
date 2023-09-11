@@ -1,8 +1,4 @@
-import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons, playNote, MIN_COLOR } from "../Utilities/utils";
-
-setTimeout(() => {
-    console.log("Delayed for 1 second.");
-}, "1000");
+import { delay, FINAL_COLOR, MakeDelay, POSITION_FINAL_COLOR, PRIMARY_COLOR, COMPARE_COLOR, SWAP_COLOR, Swap, disableAllButtons, playNote, } from "../Utilities/utils";
 
 async function heapify(arr, n, i) {
     var largest = i; // Initializing largest element as the root
@@ -26,7 +22,7 @@ async function heapify(arr, n, i) {
     if (l < n) arr[l].style.background = PRIMARY_COLOR;
 
 
-    if (largest != i) {
+    if (largest !== i) {
         arr[largest].style.background = SWAP_COLOR;
         arr[i].style.background = SWAP_COLOR;
         playNote(500);
@@ -55,7 +51,7 @@ export async function heapSort() {
         await heapify(arr, n, i);
     }
     // One by one extract an element from heap
-    for (var i = n - 1; i > 0; i--) {
+    for (i = n - 1; i > 0; i--) {
         arr[0].style.background = SWAP_COLOR;
         arr[i].style.background = SWAP_COLOR;
         playNote(500);
@@ -66,7 +62,7 @@ export async function heapSort() {
         await heapify(arr, i, 0);
     }
 
-    for (var i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         arr[i].style.background = FINAL_COLOR;
         playNote(200 + (arr[i].clientHeight));
         await MakeDelay(delay);
