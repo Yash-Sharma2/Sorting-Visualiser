@@ -96,7 +96,7 @@ function VisualComponent() {
 							</a>
 						</div>
 						<h3 >Sorting Visualiser</h3>
-						<div className='pt-5'>
+						<div className='pt-5 sliders'>
 							<label className='sliderLabel'>
 								Array Size
 								<br />
